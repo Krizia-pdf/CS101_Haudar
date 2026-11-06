@@ -11,9 +11,9 @@
 
 <meta name="author" content="Krizia Grace Haudar" />
 
-<meta name="date" content="2026-09-30" />
+<meta name="date" content="2026-10-21" />
 
-<title>Exercise 2</title>
+<title>Exercise 3</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,231 +350,329 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Exercise 2</h1>
+<h1 class="title toc-ignore">Exercise 3</h1>
 <h4 class="author">Krizia Grace Haudar</h4>
-<h4 class="date">2026-09-30</h4>
+<h4 class="date">2026-10-21</h4>
 
 </div>
 
 
-<div id="part-a-arithmetic-operations" class="section level3">
-<h3>Part A — Arithmetic Operations</h3>
-<pre class="r"><code>#TODO: Store 17 in a variable called a, and 5 in a variable called b
-#Then print the results of: a + b, a - b, a * b, a / b
-a &lt;- 17
-b &lt;- 5
+<div id="part-a-creating-vectors-c-seq-rep" class="section level3">
+<h3>Part A — Creating Vectors: c(), seq(), rep()</h3>
+<pre class="r"><code># TODO: Create a numeric vector called scores containing: 88, 92, 79, 95, 84
 
-print(a+b)</code></pre>
-<pre><code>## [1] 22</code></pre>
-<pre class="r"><code>print(a-b)</code></pre>
-<pre><code>## [1] 12</code></pre>
-<pre class="r"><code>print(a*b)</code></pre>
-<pre><code>## [1] 85</code></pre>
-<pre class="r"><code>print(a/b)</code></pre>
-<pre><code>## [1] 3.4</code></pre>
-<pre class="r"><code>#TODO: Using the same a and b, compute and print a %% b and a %/% b
-a %% b</code></pre>
-<pre><code>## [1] 2</code></pre>
-<pre class="r"><code>a %/% b</code></pre>
-<pre><code>## [1] 3</code></pre>
-<pre class="r"><code>#TODO: Print 2 raised to the power of 10 using the ^ operator
-print(2 ^ 10)</code></pre>
-<pre><code>## [1] 1024</code></pre>
-<p>Question #1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your
-own words, explain how these three results relate to each other
-mathematically.</p>
-<pre class="r"><code>a / b</code></pre>
-<pre><code>## [1] 3.4</code></pre>
-<pre class="r"><code>a %% b</code></pre>
-<pre><code>## [1] 2</code></pre>
-<pre class="r"><code>a %/% b</code></pre>
-<pre><code>## [1] 3</code></pre>
-<p>The three relates mathematically in division since the three of them
-divides value just different output</p>
-<p>Question #2: Predict the output of 10 %% 3 and 10 %/% 3 before
-running the code. Were you correct? If not, explain what you
-misunderstood.</p>
-<p>-My answer are 1 and 3. Therefore, I am correct. ### Part B — Basic
-Data Types: typeof(), class(), and mode()</p>
-<pre class="r"><code>x &lt;- 42
-y &lt;- 42L        # the L suffix forces an integer
-z &lt;- &quot;42&quot;
-w &lt;- TRUE
-v &lt;- 3 + 2i     # complex number</code></pre>
-<pre class="r"><code>#TODO: Use typeof() to check the type of each of x, y, z, w, v
-typeof(x)</code></pre>
-<pre><code>## [1] &quot;double&quot;</code></pre>
-<pre class="r"><code>typeof(y)</code></pre>
-<pre><code>## [1] &quot;integer&quot;</code></pre>
-<pre class="r"><code>typeof(z)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>typeof(w)</code></pre>
-<pre><code>## [1] &quot;logical&quot;</code></pre>
-<pre class="r"><code>typeof(v)</code></pre>
-<pre><code>## [1] &quot;complex&quot;</code></pre>
-<pre class="r"><code># TODO: Use class() to check the class of each of x, y, z, w, v
-class(x)</code></pre>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code>class(y)</code></pre>
-<pre><code>## [1] &quot;integer&quot;</code></pre>
-<pre class="r"><code>class(z)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>class(w)</code></pre>
-<pre><code>## [1] &quot;logical&quot;</code></pre>
-<pre class="r"><code>class(v)</code></pre>
-<pre><code>## [1] &quot;complex&quot;</code></pre>
-<pre class="r"><code>#TODO: Use mode() to check the class of each of x, y, z, w, v
+scores &lt;- c(88, 92,79, 95, 84)
 
-mode(x)</code></pre>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code>mode(y)</code></pre>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code>mode(z)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>mode(w)</code></pre>
-<pre><code>## [1] &quot;logical&quot;</code></pre>
-<pre class="r"><code>mode(v)</code></pre>
-<pre><code>## [1] &quot;complex&quot;</code></pre>
-<p>Question #3): x &lt;- 42 and y &lt;- 42L look almost identical, but
-typeof(x) and typeof(y) give different answers. Explain the difference
-in your own words.</p>
-<pre class="r"><code>#They give different answer because the L in 42L specify it as an integer.</code></pre>
-<p>Question #4: Is typeof() ever different from class() and from mode()
-for the same object? Look at your results above and explain any case
-where this happens (or, if you did not see one, explain what you would
-expect for a matrix or factor).</p>
-<pre class="r"><code>#Yes, typeof() is different from the two because it identify an object differently from the two as shown in the results above</code></pre>
+# Then create a character vector called subjects containing:
+# &quot;Math&quot;, &quot;Science&quot;, &quot;English&quot;, &quot;History&quot;, &quot;PE&quot;
+
+subjects &lt;- c(&quot;Math&quot;, &quot;Science&quot;, &quot;English&quot;, &quot;History&quot;, &quot;PE&quot;)</code></pre>
+<pre class="r"><code># TODO: Use seq() to create a vector called odds containing odd numbers
+# from 1 to 19 (hint: use the &quot;by&quot; argument)
+
+odds&lt;- seq(1, 19, by = 2)
+odds</code></pre>
+<pre><code>##  [1]  1  3  5  7  9 11 13 15 17 19</code></pre>
+<pre class="r"><code># TODO: Use seq() with length.out to create a vector of exactly 5 evenly
+# spaced numbers between 0 and 1
+
+seq(0, 1,length.out = 5)</code></pre>
+<pre><code>## [1] 0.00 0.25 0.50 0.75 1.00</code></pre>
+<pre class="r"><code># TODO: Use rep() to create a vector that repeats the value &quot;A&quot; 4 times
+
+Vec_A &lt;- rep(&quot;A&quot;,4)
+Vec_A</code></pre>
+<pre><code>## [1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot;</code></pre>
+<pre class="r"><code># TODO: Use rep() with the &quot;each&quot; argument to turn c(&quot;A&quot;, &quot;B&quot;) into
+# &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; (each element repeated twice, in order)
+Vec_B &lt;- rep(c(&quot;A&quot;, &quot;B&quot;), each = 2)
+Vec_B</code></pre>
+<pre><code>## [1] &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot;</code></pre>
+<pre class="r"><code># TODO: Use rep() with the &quot;times&quot; argument to turn c(&quot;A&quot;, &quot;B&quot;) into
+# &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; (the whole sequence repeated twice)
+Vec_C &lt;- rep(c(&quot;A&quot;, &quot;B&quot;), times = 2)
+Vec_C</code></pre>
+<pre><code>## [1] &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot;</code></pre>
+<p>Question #1:</p>
+<p>Set up a vector named age, consisting of</p>
+<pre class="r"><code>age &lt;- c(15, 28, 32, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 12, 42, 53, 41, 51, 35, 24, 33, 8)</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><p>How many data points? #length(age)</p></li>
+<li><p>Find the reciprocal of age?</p></li>
+</ol>
+<p>#(1/age)</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Assign also new_age &lt;- c(age, 0, age). What happens to
+new_age?</li>
+</ol>
+<pre class="r"><code>new_age &lt;- c(age, 0, age)
+new_age</code></pre>
+<pre><code>##  [1] 15 28 32 36 27 18 52 39 42 29 35 31 27 22 37 34 19 20 57 49 50 37 46 25 17
+## [26] 12 42 53 41 51 35 24 33  8  0 15 28 32 36 27 18 52 39 42 29 35 31 27 22 37
+## [51] 34 19 20 57 49 50 37 46 25 17 12 42 53 41 51 35 24 33  8</code></pre>
+<p>ans: The new_age printed doubled the value</p>
+<p>d: Find the minimum and the maximum value of age.</p>
+<pre class="r"><code>min(age)</code></pre>
+<pre><code>## [1] 8</code></pre>
+<pre class="r"><code>max(age)</code></pre>
+<pre><code>## [1] 57</code></pre>
+<p>Question #2:</p>
+<p>-rep(c(“A”,“B”), each = 2) and rep(c(“A”,“B”), times = 2) both
+produce a vector of length 4, but with different element orders.</p>
+<p>-Explain in your own words the difference between each and times.</p>
+<p>ans: the difference between each and times is that each prints the
+value inside in same value side by side while times prints the value in
+mix</p>
+<p>Question #3:</p>
+<p>-Compare seq(1, 20, by = 2) with seq(1, 20, length.out = 5). What
+does each argument (by vs length.out) control, and when would you use
+one over the other in a real analysis?</p>
+<p>ans:</p>
+<p>Question #4:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Generate a sequence for 20 to 60. Name the vector as vec_num</li>
+</ol>
+<pre class="r"><code>vec_num&lt;- seq(20, 60)
+vec_num</code></pre>
+<pre><code>##  [1] 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
+## [26] 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Get the mean for vec_num.</li>
+</ol>
+<pre class="r"><code>vec_num &lt;- seq(20, 60)
+mean(vec_num)</code></pre>
+<pre><code>## [1] 40</code></pre>
+<p>c.Get the sum for vec_num</p>
+<pre class="r"><code>vec_num &lt;- seq(20, 60)
+sum(vec_num)</code></pre>
+<pre><code>## [1] 1640</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>How many data points are there in vec_num?</li>
+</ol>
+<pre class="r"><code>vec_num &lt;- seq(20, 60)
+length(vec_num)</code></pre>
+<pre><code>## [1] 41</code></pre>
 </div>
-<div id="part-c-type-conversion" class="section level3">
-<h3>Part C — Type Conversion</h3>
-<pre class="r"><code># TODO: Convert num_string to a numeric value using as.numeric()
-num_string &lt;- &quot;123&quot;
-as.numeric(num_string)</code></pre>
-<pre><code>## [1] 123</code></pre>
-<pre class="r"><code># Then check its type with typeof(), class(), and mode()
-typeof(num_string)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>class(num_string)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>mode(num_string)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code># TODO: Convert the number 0 and the number 1 to logical using as.logical()
-as.logical(0)</code></pre>
-<pre><code>## [1] FALSE</code></pre>
-<pre class="r"><code>as.logical(1)</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-<pre class="r"><code># TODO: Try converting bad_string to numeric using as.numeric()
-bad_string &lt;- &quot;hello123&quot;
-as.numeric(bad_string)</code></pre>
-<pre><code>## Warning: NAs introduced by coercion</code></pre>
-<pre><code>## [1] NA</code></pre>
-<p>Question #5: When you ran the conversion-fail chunk, R produced NA
-and a warning instead of stopping with an error.</p>
-<p>Why do you think R is designed to give a warning here rather than
-crashing the whole script?</p>
-<p>-The R is designed to only give warning and not crashing script
-because the conversion-fail chunk is the only thing that cannot be run
-but the other is okay. It means if it is only a minor issue it won’t
-immediately crash the code.</p>
-<p>What are the risks of this behavior if you don’t read your
-warnings?</p>
-<p>-The risk is that the converted value will not run and won’t be
-printed therefore it might give confusion to the programmer on why it
-was not shown.</p>
-<p>Question #6: as.logical(0) and as.logical(1) convert to FALSE and
-TRUE.</p>
-<p>What do you think as.logical(2) and as.logical(-1)` will produce?</p>
-<p>-I think it will produce also TRUE and FALSE</p>
-<p>Test it, then explain the rule R seems to be following.</p>
-<pre class="r"><code>as.logical(2)</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-<pre class="r"><code>as.logical(-1)</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-<p>I think the R is following a rule in which if anything has a value it
-will be TRUE aside from 0.</p>
+<div id="part-b-subsetting-accessing-vectors" class="section level3">
+<h3>Part B — Subsetting (Accessing) Vectors</h3>
+<pre class="r"><code>grades &lt;- c(88, 92, 79, 95, 84)
+names(grades) &lt;- c(&quot;Math&quot;, &quot;Science&quot;, &quot;English&quot;, &quot;History&quot;, &quot;PE&quot;)
+
+# TODO: Access the 3rd element of grades using positional indexing
+grades[3]</code></pre>
+<pre><code>## English 
+##      79</code></pre>
+<pre class="r"><code># TODO: Access the 1st and 4th element of grades using positional indexing
+grades[c(1, 4)]</code></pre>
+<pre><code>##    Math History 
+##      88      95</code></pre>
+<pre class="r"><code># TODO: Access &quot;Science&quot; and &quot;PE&quot; together using their names
+grades[c(&quot;Science&quot;, &quot;PE&quot;)]</code></pre>
+<pre><code>## Science      PE 
+##      92      84</code></pre>
+<pre class="r"><code># TODO: Return all elements of grades EXCEPT the 1st and 4th, using
+# negative indexing, e.g. grades[-c(...)]
+grades[-c(1, 4)]</code></pre>
+<pre><code>## Science English      PE 
+##      92      79      84</code></pre>
+<pre class="r"><code># TODO: Use a logical condition to return only the grades that are
+# greater than or equal to 85 (hint: grades[grades &gt;= 85])
+grades[grades &gt;= 85]</code></pre>
+<pre><code>##    Math Science History 
+##      88      92      95</code></pre>
+<p>Question #5:</p>
+<p>Negative indexing (grades[-1]) removes an element, while logical
+indexing (grades[grades &gt;= 85]) filters by a condition.</p>
+<p>Describe a real situation where you would need negative indexing, and
+a different situation where logical indexing would be the better
+tool.</p>
+<p>-Negative indexing is used to manually drop specific, known rows or
+columns you don’t need. . Logical indexing, on the other hand, filters
+data automatically based on a condition or rule.</p>
+<p>Question #6:</p>
+<p>What happens if you run grades[10] (an index that doesn’t exist)? Run
+it, observe the result, and explain why R responds this way instead of
+throwing an error.</p>
+<pre class="r"><code>grades[10]</code></pre>
+<pre><code>## &lt;NA&gt; 
+##   NA</code></pre>
+<p>-Running grades[10] returns NA, instead of a fatal error because
+out-of-bounds positional indexing is treated as a request for a position
+that exists conceptually but currently holds no recorded value.</p>
+<p>Question #7:</p>
+<p>Print a vector with the integers between 1 and 100 that are not
+divisible by 3, 5 and 7 using filter option. Filter(function(i) { all(i
+%% c(3,5,7) != 0) }, seq(100)) Write the R code and its output.</p>
+<pre class="r"><code>Filter(function(i) { all(i %% c(3, 5, 7) != 0) }, seq(100))</code></pre>
+<pre><code>##  [1]  1  2  4  8 11 13 16 17 19 22 23 26 29 31 32 34 37 38 41 43 44 46 47 52 53
+## [26] 58 59 61 62 64 67 68 71 73 74 76 79 82 83 86 88 89 92 94 97</code></pre>
 </div>
-<div id="part-d-strings-paste-and-paste0" class="section level3">
-<h3>Part D — Strings, paste(), and paste0()</h3>
-<pre class="r"><code># TODO: Print first_name and last_name using print() and/or cat()
-first_name &lt;- &quot;Juan&quot;
-last_name &lt;- &quot;Dela Cruz&quot;
+<div id="part-c-vector-operations-and-append" class="section level3">
+<h3>Part C — Vector Operations and append()</h3>
+<pre class="r"><code>x &lt;- c(1, 2, 3, 4)
+y &lt;- c(10, 20, 30, 40)
 
-print(first_name)</code></pre>
-<pre><code>## [1] &quot;Juan&quot;</code></pre>
-<pre class="r"><code>cat(last_name)</code></pre>
-<pre><code>## Dela Cruz</code></pre>
-<pre class="r"><code># TODO: Use paste() to combine first_name and last_name into a full name
-paste(first_name,last_name) </code></pre>
-<pre><code>## [1] &quot;Juan Dela Cruz&quot;</code></pre>
-<pre class="r"><code># TODO: Use paste0() to do the same, and compare the two results
-paste0(first_name,last_name)</code></pre>
-<pre><code>## [1] &quot;JuanDela Cruz&quot;</code></pre>
-<pre class="r"><code>## TODO: Use paste() with the argument sep = &quot;-&quot; to join first_name and
-# last_name with a dash instead of a space
-sep = &quot;-&quot;
- paste(first_name,sep,last_name) </code></pre>
-<pre><code>## [1] &quot;Juan - Dela Cruz&quot;</code></pre>
-<pre class="r"><code># TODO: Use paste0() to build the sentence:
-# &quot;Juan Dela Cruz is 21 years old.&quot; by combining full_name, age, and text
-full_name &lt;- &quot;Juan Dela Cruz&quot;
-age &lt;-  21
+# TODO: Add x and y element-wise, and print the result
+x + y</code></pre>
+<pre><code>## [1] 11 22 33 44</code></pre>
+<pre class="r"><code># TODO: Multiply every element of x by 2
+x * 2</code></pre>
+<pre><code>## [1] 2 4 6 8</code></pre>
+<pre class="r"><code>z &lt;- c(1, 2, 3, 4, 5, 6)
+short &lt;- c(1, 0)
 
+# TODO: Add z and short together and print the result. Run this even
+z + short</code></pre>
+<pre><code>## [1] 2 2 4 4 6 6</code></pre>
+<pre class="r"><code># though the vectors are different lengths -- observe what R does.</code></pre>
+<pre class="r"><code>fruits &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
 
-paste0(full_name,&quot; is &quot;,age,&quot; years old&quot;)</code></pre>
-<pre><code>## [1] &quot;Juan Dela Cruz is 21 years old&quot;</code></pre>
-<p>Question #7: paste() and paste0() produced different results for the
-same two strings. Explain exactly why, referencing what each function
-does by default.</p>
-<p>-paste() only prints the text with space while paste0() prints
-without the space.</p>
-<p>Question #8: In the strings-numbers chunk, you combined a character
-string with a numeric variable (age) using paste0() without first
-converting age to a string.</p>
-<p>Did this cause an error? Explain what paste0() does internally to
-make this work, and how it relates to the type conversions you practiced
-in Part C.</p>
-<p>-It did not cause an error even if we did not convert the age to a
-string since paste0() only prints the given value or characters without
-space.</p>
+# TODO: Use append() to add &quot;date&quot; to the end of fruits
+fruits &lt;- append(fruits, &quot;date&quot;)
+
+# TODO: Use append() with the &quot;after&quot; argument to insert &quot;kiwi&quot; between
+# &quot;apple&quot; and &quot;banana&quot; (i.e., after position 1)
+fruits &lt;- append(fruits, &quot;kiwi&quot;, after = 1)
+fruits</code></pre>
+<pre><code>## [1] &quot;apple&quot;  &quot;kiwi&quot;   &quot;banana&quot; &quot;cherry&quot; &quot;date&quot;</code></pre>
+<p>Question #8:</p>
+<p>In the vectors-recycling chunk, z has 6 elements and short has only
+2. R still produced an answer instead of an error.</p>
+<p>Explain, in your own words, what R’s “recycling rule” did to short to
+make the addition work.</p>
+<p>-R’s recycling rule automatically repeated the shorter vector
+(<code>1, 0</code>) to match the length of <code>z</code>, turning it
+into <code>1, 0, 1, 0, 1, 0</code> before adding them together.</p>
+<p>Question #9: Now try adding z (length 6) to c(1, 0, 1) (length 3)
+instead. Does it work cleanly?</p>
+<p>-Yes, it works cleanly without any warnings because 6 is an exact
+multiple of 3.</p>
+<p>Then try adding z to c(1, 0, 1, 1) (length 4). Compare the warning
+(or lack of one) in each case, and explain what condition determines
+whether R recycles silently versus with a warning.</p>
+<p>-Adding z to c(1, 0, 1) produces no warning, while adding z to c(1,
+0, 1, 1) triggers a warning (longer object length is not a multiple of
+shorter object length). Condition: R recycles silently when the longer
+vector’s length is an exact multiple of the shorter vector’s length. If
+it is not an exact multiple, R still recycles but issues a warning.</p>
+<pre class="r"><code>z + c(1, 0, 1)</code></pre>
+<pre><code>## [1] 2 2 4 5 5 7</code></pre>
+<pre class="r"><code>z + c(1, 0, 1, 1)</code></pre>
+<pre><code>## Warning in z + c(1, 0, 1, 1): longer object length is not a multiple of shorter
+## object length</code></pre>
+<pre><code>## [1] 2 2 4 5 6 6</code></pre>
+</div>
+<div id="part-d-lists-creating-and-subsetting" class="section level3">
+<h3>Part D — Lists: Creating and Subsetting</h3>
+<pre class="r"><code># TODO: Create a list called student with these named elements:
+# name = &quot;Maria Santos&quot;, age = 20, grades = c(88, 92, 79),
+# is_enrolled = TRUE
+
+student &lt;- list(
+  name = &quot;Maria Santos&quot;,
+  age = 20,
+  grades = c(88, 92, 79),
+  is_enrolled = TRUE
+)</code></pre>
+<pre class="r"><code># TODO: Access the &quot;grades&quot; element of student using single brackets
+# student[&quot;grades&quot;] -- then check its type with class()
+
+student[&quot;grades&quot;]</code></pre>
+<pre><code>## $grades
+## [1] 88 92 79</code></pre>
+<pre class="r"><code>class(student[&quot;grades&quot;])</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre class="r"><code># TODO: Access the &quot;grades&quot; element of student using double brackets
+# student[[&quot;grades&quot;]] -- then check its type with class()
+
+student[[&quot;grades&quot;]]</code></pre>
+<pre><code>## [1] 88 92 79</code></pre>
+<pre class="r"><code>class(student[[&quot;grades&quot;]])</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code># TODO: Access the &quot;name&quot; element of student using the $ operator
+# student$name
+
+student$name</code></pre>
+<pre><code>## [1] &quot;Maria Santos&quot;</code></pre>
+<pre class="r"><code># TODO: From student, extract just the SECOND grade in the grades vector
+# in a single expression, e.g. student[[&quot;grades&quot;]][2] or student$grades[2]
+
+student$grades[2]</code></pre>
+<pre><code>## [1] 92</code></pre>
+<p>Question #10:</p>
+<p>student[“grades”] and student[[“grades”]] look similar but return
+objects of different classes.</p>
+<p>Run class() on each and explain the difference in what single-bracket
+[ ] versus double-bracket [[ ]] return from a list.</p>
+<p>-Single brackets ([) keep the list container intact, whereas double
+brackets ([[) unpack and extract the raw contents directly from
+inside.</p>
+<p>Question #11:</p>
+<p>Why do you think R makes a distinction between [ ] and [[ ]] for
+lists, but a vector only needs [ ]? Think about what a list can contain
+that a vector cannot.</p>
+<p>-Vectors hold a single data type, making a single bracket enough,
+whereas lists can hold completely different data types at once,
+requiring <code>[</code> to subset and <code>[[</code> to reach
+inside.</p>
 </div>
 <div id="part-e-critical-thinking-challenge" class="section level3">
 <h3>Part E — Critical Thinking Challenge</h3>
-<pre class="r"><code># TODO: Predict, then test: what is the result of &quot;5&quot; + 5 in R?
-# Run it and read the error message carefully.
-#&quot;5&quot; + 5
-#needs to comment this because it won&#39;t knit unless I do so</code></pre>
-<p>It shows that it is non-numeric argument.</p>
-<p>Question #9: Some programming languages automatically convert “5” + 5
-into 10 without an error. R does not.</p>
-<p>Based on what you’ve learned about R’s data types in this lab, why do
-you think R requires an explicit conversion instead of guessing what the
-programmer meant?</p>
-<p>-It requires an explicit conversion because the value you give to R
-will be treated as what you have given, so unless you specify what kind
-of data type it is it won’t change it.</p>
-<p>Question #10: Suppose a classmate writes a script that reads a column
-of “numbers” from a text file. The column looks numeric, but when they
-try sum() on it, R throws an error. Based on everything in this lab
-(types, typeof()/class()/mode(), conversion, warnings), write a short
-paragraph explaining what likely went wrong and the steps you’d take to
-diagnose and fix it.</p>
-<p>-R throws an error because the column of numbers from a text file was
-not specified as to what kind of data type so the R read as string not a
-numerical value. I’d specify what kind of data type the column of
-numbers before proceeding in sum().</p>
+<pre class="r"><code>inventory &lt;- list(
+  item = c(&quot;Notebook&quot;, &quot;Pen&quot;, &quot;Eraser&quot;),
+  price = c(25.50, 10.00, 5.00),
+  in_stock = c(TRUE, TRUE, FALSE)
+)
+
+# TODO: Using what you learned in Parts B and D, print only the items
+# (from inventory$item) that are currently in stock (in_stock == TRUE)
+
+inventory$item[inventory$in_stock]</code></pre>
+<pre><code>## [1] &quot;Notebook&quot; &quot;Pen&quot;</code></pre>
+<pre class="r"><code># TODO: A new product &quot;Ruler&quot; priced at 15.00 and in stock (TRUE) needs
+# to be added to inventory. Use append() to add &quot;Ruler&quot; to
+# inventory$item, 15.00 to inventory$price, and TRUE to inventory$in_stock.
+# (You will need three separate append() calls, one per vector.)
+inventory$item &lt;- append(inventory$item, &quot;Ruler&quot;)
+inventory$price &lt;- append(inventory$price, 15.00)
+inventory$in_stock &lt;- append(inventory$in_stock, TRUE)
+inventory</code></pre>
+<pre><code>## $item
+## [1] &quot;Notebook&quot; &quot;Pen&quot;      &quot;Eraser&quot;   &quot;Ruler&quot;   
+## 
+## $price
+## [1] 25.5 10.0  5.0 15.0
+## 
+## $in_stock
+## [1]  TRUE  TRUE FALSE  TRUE</code></pre>
+<p>Question #12:</p>
+<p>In challenge-1, you combined logical indexing on one vector
+(in_stock) to filter a different vector (item) inside the same list.
+Explain, step by step, why inventory<span class="math inline">\(item[inventory\)</span>in_stock] works even though
+item and in_stock are stored as separate elements of the list.</p>
+<p>-Passing <code>inventory$in_stock</code> inside the brackets tells R
+to check each item’s true-or-false status and keep only the ones marked
+true.</p>
+<p>Question #13:</p>
+<p>Suppose a classmate stores related data as three separate,
+unconnected vectors (item_names, item_prices, item_stock) instead of
+grouping them into one list like inventory. What risks or bugs could
+this create as the dataset grows or gets reordered? Argue for or against
+using a list (or, later, a data frame) instead of separate vectors.</p>
+<p>-Keeping related data in separate vectors risks everything getting
+out of order and causing mismatched errors, whereas grouping them in
+lists or data frames keeps them safely bundled together.</p>
 </div>
 <div id="conclusion" class="section level3">
 <h3>Conclusion</h3>
-<p>In 3–4 sentences, summarize what you learned about how R handles
-different data types, and why understanding typeof()/class() and
-conversion functions matters before doing arithmetic or combining
-data.</p>
-<p>-R handles the value, string, or character given to it as is that’s
-why you need to be explicit with specifying in R. Understanding
-typeof()/class matters because they read or recognize values in
-different types of data type. Therefore, you need to be careful in using
-typeof and classes in tuned with the specific kind of data you have in
-your mind.</p>
+<p>In 3–4 sentences, summarize the key differences between vectors and
+lists in R, and explain when you would choose one data structure over
+the other.</p>
+<p>-Vectors hold a single data type, use single brackets, and are best
+for uniform math operations. Lists can hold mixed data types, use both
+single and double brackets, and require unpacking to reach inner items.
+You choose vectors for simple sequences and lists for complex,
+multi-type records.</p>
 </div>
 
 
