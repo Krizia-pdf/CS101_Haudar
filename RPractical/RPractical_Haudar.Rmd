@@ -1,0 +1,122 @@
+---
+title: "R Programming Practical Examination"
+author: "Krizia Grace Desamero Haudar"
+date: "2026-11-11"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Part A: Basic Operations
+
+
+A1 Create v as the sequence 5, 10, 15, ...., 50 using seq(). Print its length, sum and mean.
+
+```{r}
+v <- seq(5:50)
+length(v)
+sum(v)
+mean(v)
+```
+A2 Create w that repeats the vector c(1, 2, 3) four times, and z that rpeats each element of c(1, 2, 3) four times. Print both.
+
+```{r}
+w <- rep(1:3, by = 4) 
+z <- rep(1:3, 4)
+
+```
+
+
+A3 Compute and print: the remainder of 17 divided by 5, the integer division of 17 by 5, 2 to the power of 10, square the root of 144, and pi rounded to 3 decimals.
+```{r}
+ 17 %/% 5
+ 17 %% 5
+ 2^10
+ sqrt (144) 
+ 
+
+```
+
+A4 Given a <- c(2, 4, 6, 8)  and b <- c(1, 3, 5, 7), print a + b, a * b, the logical comparison a > b, and the dot product sum (a * b).
+
+```{r}
+a <- c(2, 4, 6, 8)
+b <- c(1, 3, 5, 7)
+
+a + b
+a * b
+a > b
+sum(a*b)
+```
+
+A5 Use paste() to produce "Student-1" "Student-2" "Student-3". Then identify the datatype of 42, 42L, "42", 41i, and TRUE. What are its output?
+
+```{r}
+
+paste("Student-1", "Student-2", "Student-3")
+class(42)
+class(42L)
+class("42")
+class(41i)
+class(TRUE)
+```
+
+Part B: Data Frames and Conditional Statements
+
+#B1 Create a data frame students with 8 rows and these columns (use stringsAsFactors = FALSE; sex is "M" or "F"):
+
+```{r}
+students <- data.frame
+
+(
+  #ID = c(1, 2, 3, 4, 5, 6, 7, 8)
+  #Name = c("Alice", "Bruno", "Chen", "Dana", "Elif", "Farid", "Grace", "Hiro")
+  #Sex = c("F", "M")
+  #Section = c("A", "B", "A", "C", "B", "C", "A", "B")
+  #Midterm = c(78, 85, 92, 67, 74, 88, 95, 59)
+  #Final = c(82, 79, 96, 71, 80, 91, 93, 65)
+  #Attendance = c(95, 88, 100, 72, 90, 85, 98, 60)'
+  
+  #stringsAsFactors = FALSE
+           )
+```
+
+B2 Display the structure , dimensions, column names, and summary of students
+
+```{r}
+#str(students)
+```
+B3 Add a column average = the mean of midterm and final for each student, rounded to 1 decimal.
+
+```{r}
+#students$average
+```
+
+B4 Add a logical column passed that is TRUE when average >= 70 and attendance >= 75.
+
+
+B5 Using ifelse(), add a column standing with these values based on average:
+
+#. "Honors" if average >= 90
+#. "Good" if average >= 75 (and below 90)
+#. "Needs Support" otherwise
+
+```{r}
+#students$remarks <- 
+  #ifelse(students$Average >= 90, "Honors")
+  #ifelse(students$Average >= 75, "Good")
+  #ifelse(students$Average <= 74, "Needs Support")
+```
+
+#B^ Write a function classify(score) that uses an if / else if/ else chain and returns "Distinction" for 85 or above, "Merit" for 70 to 84, "Pass" for %0 to 69, and "Fail" below 50. Test it with sapply (c(90, 73, 55, 40), classify) and print the result.
+
+
+
+
+
+
+
